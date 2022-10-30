@@ -2,9 +2,9 @@ from aiogram import Bot, Dispatcher, executor
 from aiogram.dispatcher.filters import Text
 import logging
 
-from bot.main import entrypoint, entrypoint_callback
-from bot.settings import settings, choose_test, set_test
-from bot.test import start_test, begin
+from main import entrypoint, entrypoint_callback
+from settings import settings, choose_test, set_test
+from test import start_test, begin
 
 bot = Bot(token="5516304149:AAGA_QenjbbN7cTu5oOjPgtDJecEhNMWdyc")
 dp = Dispatcher(bot)
