@@ -1,0 +1,8 @@
+---
+- name: Start learnbot
+  ansible.builtin.command:
+    argv:
+    - "docker-compose"
+    - "up"
+    - "-d"
+    chdir: "{{ learnbot_deploy_dir }}"

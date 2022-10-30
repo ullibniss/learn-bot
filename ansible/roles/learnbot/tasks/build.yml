@@ -1,0 +1,10 @@
+---
+- name: Build learnbot image
+  ansible.builtin.command:
+    chdir: "{{ learnbot_build_dir }}"
+    argv:
+    - "docker"
+    - "build"
+    - "-t"
+    - "{{ learnbot_image_name }}:{{ learnbot_image_tag }}"
+    - "."

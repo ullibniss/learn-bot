@@ -1,0 +1,27 @@
+---
+- name: Create directories
+  ansible.builtin.file:
+    path: "{{ path_to_dir }}"
+    state: directory
+    owner: "{{ default_user }}"
+    group: "{{ default_user }}"
+    mode: 0755
+  loop:
+    - "{{ learnbot_build_dir}}"
+  loop_control:
+    loop_var: path_to_dir
+
+- name: Copy bot dir
+  ansible.builtin.copy:
+    src: "{{ project_dir }}/bot"
+    dest: "{{ learnbot_build_dir }}"
+
+- name: Copy files
+  ansible.builtin.copy:
+    src: "{{ path_to_file }}"
+    dest: "{{ learnbot_build_dir }}/"
+  loop:
+    - "Dockerfile"
+    - "requirements.txt"
+  loop_control:
+    loop_var: path_to_file

@@ -1,0 +1,22 @@
+---
+- name: Create deploy directory
+  ansible.builtin.file:
+    path: "{{ learnbot_deploy_dir }}"
+    state: directory
+    owner: "{{ default_user }}"
+    group: "{{ default_user }}"
+    mode: 0755
+
+- name: Create log directory
+  ansible.builtin.file:
+    path: "{{ learnbot_logs_dir }}"
+    state: directory
+    owner: 1000
+    group: 1000
+    mode: 0755
+  become: true
+
+- name: Render docker-compose
+  ansible.builtin.template:
+    src: docker-compose.yml
+    dest: "{{ learnbot_deploy_dir }}"

@@ -1,0 +1,7 @@
+learnbot_deploy_dir: "{{ deploy_dir }}/learnbot"
+learnbot_build_dir: "{{ learnbot_deploy_dir }}/build"
+learnbot_logs_dir: "{{ learnbot_deploy_dir }}/logs
+"
+learnbot_image_name: learnbot
+learnbot_image_tag: 0.0.1
+

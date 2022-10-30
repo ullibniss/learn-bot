@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  learnbot:
+    image: "{{ learnbot_image_name }}:{{ learnbot_image_tag }}"
+    volumes:
+      - "{{ learnbot_deploy_dir }}:/opt/app/tests"
