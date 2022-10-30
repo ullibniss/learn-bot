@@ -1,0 +1,7 @@
+---
+- name: Build learnbot image
+  hosts: [learnbot]
+  roles:
+    - role: learnbot
+      vars:
+        learnbot_action: build

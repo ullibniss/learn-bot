@@ -1,0 +1,7 @@
+---
+- name: Deploy learnbot for build
+  hosts: [learnbot]
+  roles:
+    - role: learnbot
+      vars:
+        learnbot_action: build_deploy

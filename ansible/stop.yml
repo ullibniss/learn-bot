@@ -1,0 +1,7 @@
+---
+- name: Deploy learnbot
+  hosts: [learnbot]
+  roles:
+    - role: learnbot
+      vars:
+        learnbot_action: stop
