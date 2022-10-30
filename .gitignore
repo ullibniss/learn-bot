@@ -1,0 +1,5 @@
+tests
+.idea
+__pycache__
+test_structure
+venv
