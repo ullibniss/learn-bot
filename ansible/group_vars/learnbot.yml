@@ -1,0 +1,2 @@
+default_user: "{{ lookup('env', 'USER') }}"
+project_dir: ".."
